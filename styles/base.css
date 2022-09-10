@@ -14,5 +14,9 @@
       font-kerning: normal;
       text-rendering: optimizeLegibility;
     }
+
+    body {
+        @apply text-gray-50 font-urw font-normal;
+    }
   }
   
