@@ -1,11 +1,12 @@
 interface Props {
   children: React.ReactNode
+  fullScreen?: boolean
 }
 
-export default function LayoutCover({ children }: Props) {
+export default function LayoutCover({ children, fullScreen = true }: Props) {
   return (
-    <div className="flex flex-col min-h-screen w-full">
-      <div className="my-auto">{children}</div>
+    <div className={`flex flex-col w-full${fullScreen ? ' min-h-screen' : ''}`}>
+      <div className={fullScreen ? 'my-auto' : 'mt-[25vh]'}>{children}</div>
     </div>
   )
 }

@@ -41,8 +41,8 @@ export default function NibiruWording({ className }: { className?: string }) {
           y2="365"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6B6B6B" />
-          <stop offset="1" stop-opacity="0" />
+          <stop stopColor="#6B6B6B" />
+          <stop offset="1" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_2207_1750"
@@ -52,8 +52,8 @@ export default function NibiruWording({ className }: { className?: string }) {
           y2="365"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6B6B6B" />
-          <stop offset="1" stop-opacity="0" />
+          <stop stopColor="#6B6B6B" />
+          <stop offset="1" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_2207_1750"
@@ -63,8 +63,8 @@ export default function NibiruWording({ className }: { className?: string }) {
           y2="365"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6B6B6B" />
-          <stop offset="1" stop-opacity="0" />
+          <stop stopColor="#6B6B6B" />
+          <stop offset="1" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_2207_1750"
@@ -74,8 +74,8 @@ export default function NibiruWording({ className }: { className?: string }) {
           y2="365"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6B6B6B" />
-          <stop offset="1" stop-opacity="0" />
+          <stop stopColor="#6B6B6B" />
+          <stop offset="1" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_2207_1750"
@@ -85,8 +85,8 @@ export default function NibiruWording({ className }: { className?: string }) {
           y2="365"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6B6B6B" />
-          <stop offset="1" stop-opacity="0" />
+          <stop stopColor="#6B6B6B" />
+          <stop offset="1" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_2207_1750"
@@ -96,8 +96,8 @@ export default function NibiruWording({ className }: { className?: string }) {
           y2="365"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6B6B6B" />
-          <stop offset="1" stop-opacity="0" />
+          <stop stopColor="#6B6B6B" />
+          <stop offset="1" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>

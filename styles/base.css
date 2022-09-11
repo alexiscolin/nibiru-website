@@ -1,22 +1,21 @@
 @layer base {
-    html,
-    body {
-      font-size: 16px !important;
-    }
-  
-    html {
-      font-feature-settings: 'kern' on, 'liga' on, 'calt' on, 'zero' on;
-      -webkit-font-feature-settings: 'kern' on, 'liga' on, 'calt' on, 'zero' on;
-      text-size-adjust: 100%;
-      -moz-osx-font-smoothing: grayscale;
-      font-smoothing: antialiased;
-      font-variant-ligatures: contextual common-ligatures;
-      font-kerning: normal;
-      text-rendering: optimizeLegibility;
-    }
-
-    body {
-        @apply text-gray-50 font-urw font-normal;
-    }
+  html,
+  body {
+    font-size: 16px !important;
   }
-  
+
+  html {
+    font-feature-settings: 'kern' on, 'liga' on, 'calt' on, 'zero' on;
+    -webkit-font-feature-settings: 'kern' on, 'liga' on, 'calt' on, 'zero' on;
+    text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    font-variant-ligatures: contextual common-ligatures;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply text-gray-50 font-urw font-normal;
+  }
+}

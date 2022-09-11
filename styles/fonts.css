@@ -4,47 +4,46 @@
 
 /* Urw */
 @font-face {
-    font-family: 'Urw';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('/fonts/urw/URWGeometricExt-Regular.woff2') format('woff2'),
-      url('/fonts/urw/URWGeometricExt-Regular.woff') format('woff');
-  }
-  
-  @font-face {
-    font-family: 'Urw';
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url('/fonts/urw/URWGeometricExt-Medium.woff2') format('woff2'),
-      url('/fonts/urw/URWGeometricExt-Medium.woff') format('woff');
-  }
-  
-  @font-face {
-    font-family: 'Urw';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url('/fonts/urw/URWGeometricExt-SemiBold.woff2') format('woff2'),
-      url('/fonts/urw/URWGeometricExt-SemiBold.woff') format('woff');
-  }
-  
-  @font-face {
-    font-family: 'Urw';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url('/fonts/urw/URWGeometricExt-Bold.woff2') format('woff2'),
-      url('/fonts/urw/URWGeometricExt-Bold.woff') format('woff');
-  }
-  
-  @font-face {
-    font-family: 'Urw';
-    font-style: normal;
-    font-weight: 900;
-    font-display: swap;
-    src: url('/fonts/urw/URWGeometricExt-Black.woff2') format('woff2'),
-      url('/fonts/urw/URWGeometricExt-Black.woff') format('woff');
-  }
-  
+  font-family: 'Urw';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/urw/URWGeometricExt-Regular.woff2') format('woff2'),
+    url('/fonts/urw/URWGeometricExt-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Urw';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/urw/URWGeometricExt-Medium.woff2') format('woff2'),
+    url('/fonts/urw/URWGeometricExt-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Urw';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/urw/URWGeometricExt-SemiBold.woff2') format('woff2'),
+    url('/fonts/urw/URWGeometricExt-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Urw';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/urw/URWGeometricExt-Bold.woff2') format('woff2'),
+    url('/fonts/urw/URWGeometricExt-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Urw';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/urw/URWGeometricExt-Black.woff2') format('woff2'),
+    url('/fonts/urw/URWGeometricExt-Black.woff') format('woff');
+}

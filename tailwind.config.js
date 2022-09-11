@@ -15,6 +15,11 @@ module.exports = {
       lg: `${pxToRem(1024)}rem`,
       xl: `${pxToRem(1380)}rem`,
     },
+    borderRadius: {
+      none: '0',
+      DEFAULT: `${pxToRem(50)}rem`,
+      full: '9999px',
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
