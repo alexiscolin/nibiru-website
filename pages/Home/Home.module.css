@@ -1,35 +1,5 @@
 .homepage {
-  background-image: url('/images/background-top.jpg'),
-    url('/images/background-bot.jpg');
-  background-image: -webkit-image-set(
-      url('/images/background-top.avif') 2x,
-      url('/images/background-top.avif') 1x,
-      url('/images/background-top.webp') 2x,
-      url('/images/background-top.webp') 1x,
-      url('/images/background-top.avif') 2x,
-      url('/images/background-top.avif') 1x
-    ),
-    -webkit-image-set(url('/images/background-bot.avif') 2x, url('/images/background-bot.avif')
-          1x, url('/images/background-bot.webp') 2x, url('/images/background-bot.webp')
-          1x, url('/images/background-bot.avif') 2x, url('/images/background-bot.avif')
-          1x);
-  background-image: image-set(
-      url('/images/background-top.avif') 2x,
-      url('/images/background-top.avif') 1x,
-      url('/images/background-top.webp') 2x,
-      url('/images/background-top.webp') 1x,
-      url('/images/background-top.avif') 2x,
-      url('/images/background-top.avif') 1x
-    ),
-    image-set(
-      url('/images/background-bot.avif') 2x,
-      url('/images/background-bot.avif') 1x,
-      url('/images/background-bot.webp') 2x,
-      url('/images/background-bot.webp') 1x,
-      url('/images/background-bot.avif') 2x,
-      url('/images/background-bot.avif') 1x
-    );
+  background-image: url('/images/background-bot.jpg');
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top center, bottom center;
+  background-position: bottom right;
 }
