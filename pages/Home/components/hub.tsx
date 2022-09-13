@@ -13,6 +13,7 @@ const data = [
         Open <span className="text-gray-700">the trading application.</span>
       </p>
     ),
+    detail: 'coming soon',
     disabled: true,
   },
   {
@@ -21,9 +22,7 @@ const data = [
     href: '#',
     title: (
       <p>
-        Documentation
-        <br />
-        <span className="text-gray-700">about Nibiru.</span>
+        Documentation <span className="text-gray-700">about Nibiru.</span>
       </p>
     ),
     disabled: false,
@@ -44,23 +43,25 @@ const data = [
 export default function Hero() {
   return (
     <LayoutWrapper className="grid grid-cols-12 gap-4 ">
-      <section className="flex col-span-7 w-full justify-between pb-12">
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 col-span-12 md:col-span-12 lg:col-span-8 xl:col-span-7 w-full justify-between pb-10 md:pb-12 md:px-0">
         {data?.map((card) =>
           card.disabled ? (
             <Card
               key={card.id}
               ico={card.ico}
+              detail={card.detail}
               disabled={card.disabled}
-              className=" w-1/3 h-full mr-4 last:mr-0"
+              className="w-full cols-span-1 sm:cols-span-2 md:cols-span-1 h-full"
             >
               {card.title}
             </Card>
           ) : (
             <Link key={card.id} href={card.href}>
-              <a className=" w-1/3 h-full mr-4 last:mr-0">
+              <a className="w-full cols-span-1 sm:cols-span-2 md:cols-span-1 h-full">
                 <Card
                   ico={card.ico}
                   disabled={card.disabled}
+                  detail={card.detail}
                   className="h-full"
                 >
                   {card.title}

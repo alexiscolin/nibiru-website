@@ -1,13 +1,13 @@
-import IconStart from '@/components/icons/start'
-import IconDocs from '@/components/icons/docs'
-import IconExplore from '@/components/icons/explore'
-import IconTwitter from '@/components/icons/socials/twitter'
-import IconMedium from '@/components/icons/socials/medium'
-import IconLinkedin from '@/components/icons/socials/linkedin'
-import IconGithub from '@/components/icons/socials/github'
-import IconDiscord from '@/components/icons/socials/discord'
-import IconWorld from '@/components/icons/world'
-import IconThunder from '@/components/icons/thunder'
+import IconStart from '@/components/ui/icons/start'
+import IconDocs from '@/components/ui/icons/docs'
+import IconExplore from '@/components/ui/icons/explore'
+import IconTwitter from '@/components/ui/icons/socials/twitter'
+import IconMedium from '@/components/ui/icons/socials/medium'
+import IconLinkedin from '@/components/ui/icons/socials/linkedin'
+import IconGithub from '@/components/ui/icons/socials/github'
+import IconDiscord from '@/components/ui/icons/socials/discord'
+import IconWorld from '@/components/ui/icons/world'
+import IconThunder from '@/components/ui/icons/thunder'
 
 interface Props {
   name: string

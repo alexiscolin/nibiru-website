@@ -1,4 +1,9 @@
 @layer components {
+  .stroked {
+    -webkit-text-stroke: 1px #ffffff;
+    -webkit-text-fill-color: transparent;
+  }
+
   .navLink {
     @apply relative;
     &:after {

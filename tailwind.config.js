@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     screens: {
       xs: `${pxToRem(320)}rem`,
-      sm: `${pxToRem(576)}rem`,
+      sm: `${pxToRem(520)}rem`,
       md: `${pxToRem(768)}rem`,
       lg: `${pxToRem(1024)}rem`,
       xl: `${pxToRem(1380)}rem`,
@@ -56,6 +56,7 @@ module.exports = {
       10.5: `${pxToRem(104)}rem`,
       11: `${pxToRem(128)}rem`,
       12: `${pxToRem(192)}rem`,
+      '1/2': '50%',
     },
     fontFamily: {
       urw: ['"Urw"', defaultTheme.fontFamily.sans],

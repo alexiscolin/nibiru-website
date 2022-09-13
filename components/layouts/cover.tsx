@@ -6,7 +6,9 @@ interface Props {
 export default function LayoutCover({ children, fullScreen = true }: Props) {
   return (
     <div className={`flex flex-col w-full${fullScreen ? ' min-h-screen' : ''}`}>
-      <div className={fullScreen ? 'my-auto' : 'mt-[25vh]'}>{children}</div>
+      <div className={fullScreen ? 'my-auto' : 'mt-10 md:mt-[25vh]'}>
+        {children}
+      </div>
     </div>
   )
 }

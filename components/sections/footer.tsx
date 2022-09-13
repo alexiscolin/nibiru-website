@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Icon from '@/components/ui/icon'
 import LayoutWrapper from '@/components/layouts/wrapper'
-import IconsNibiruGray from '@/components/icons/nibiruGray'
+import IconsNibiruGray from '@/components/ui/icons/nibiruGray'
 
 interface FooterLinks {
   id: number
@@ -65,24 +65,26 @@ export default function Footer() {
   return (
     <LayoutWrapper>
       <footer className="grid grid-cols-12 gap-x-3 gap-y-6 mb-7">
-        <div className="col-span-7 flex justify-between">
-          <div className="flex items-center">
-            <div className="mr-9 w-9">
-              <IconsNibiruGray />
+        <div className="col-span-12 md:col-span-12 lg:col-span-8 xl:col-span-7 flex flex-col sm:flex-row justify-between">
+          <div className="flex flex-col sm:flex-row text-center justify-between sm:items-center">
+            <IconsNibiruGray className="sm:mr-6 md:mr-9 w-10 md:w-9 mx-auto mb-5 sm:mb-0" />
+            <div>
+              {footerLinks.map((link) => (
+                <Link href={link.url} key={link.id}>
+                  <a className="navLink mr-5 md:mr-6 last:mr-0 font-medium">
+                    {link.name}
+                  </a>
+                </Link>
+              ))}
             </div>
-            {footerLinks.map((link) => (
-              <Link href={link.url} key={link.id}>
-                <a className="navLink mr-6 font-medium">{link.name}</a>
-              </Link>
-            ))}
           </div>
-          <nav className="flex text-gray-700">
+          <nav className="flex justify-center text-gray-700 mt-6 sm:mt-0">
             {socialLinks.map((link) => (
               <Link href={link.url} key={link.id}>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mr-6 last:mr-0 hover:text-gray-0"
+                  className="mr-5 md:mr-6 last:mr-0 hover:text-gray-0 transition-all ease-in-out duration-150"
                   title={link.name}
                 >
                   <Icon name={link.ico} />
@@ -91,7 +93,7 @@ export default function Footer() {
             ))}
           </nav>
         </div>
-        <span className="col-span-12 text-100 text-gray-700">
+        <span className="col-span-12 text-center md:text-left text-100 text-gray-700 mt-6">
           © {new Date().getFullYear()} Nibiru Overlords
         </span>
       </footer>

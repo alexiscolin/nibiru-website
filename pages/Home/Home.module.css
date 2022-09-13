@@ -4,11 +4,6 @@
   background-position: bottom right;
 }
 
-.titleStroke {
-  -webkit-text-stroke: 1px #ffffff;
-  -webkit-text-fill-color: transparent;
-}
-
 .word {
   filter: contrast(170%) brightness(1000%);
   background: -webkit-linear-gradient(
