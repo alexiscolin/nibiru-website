@@ -30,13 +30,22 @@ const keyNumbers: KeyNumbers[] = [
 export default function Hero() {
   return (
     <section className="flex items-center flex-col mb-8 md:mb-11">
-      <Image
-        className="relative md:absolute mx-auto w-11 mt-10.5 md:mt-0 md:w-[16vw] md:top-12 xl:top-11 md:right-12 z-40"
-        src="/images/nibi-earth@2x.png"
-        alt="Nibiru's earth"
-        width={359}
-        height={658}
-      />
+      <LayoutWrapper>
+        <Image
+          className="relative md:hidden mx-auto w-11 mt-10.5  z-40"
+          src="/images/nibi-earth@2x.png"
+          alt="Nibiru's earth"
+          width={359}
+          height={658}
+        />
+        <Image
+          className="hidden md:block md:absolute mx-auto md:mt-0 md:w-[25vw] lg:w-[min(30vw,35rem)] md:top-11 lg:top-11 md:right-[10vw] lg:-right-3 xl:-right-10 z-40 pointer-events-none"
+          src="/images/nibi-gems@2x.png"
+          alt="Nibiru's earth"
+          width={511}
+          height={939}
+        />
+      </LayoutWrapper>
       <LayoutCover fullScreen={false}>
         <NibiruWording
           className={styles.word + ' hidden sm:block absolute w-full'}
