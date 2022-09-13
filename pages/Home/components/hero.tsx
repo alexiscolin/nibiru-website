@@ -39,7 +39,7 @@ export default function Hero() {
           height={658}
         />
         <Image
-          className="hidden md:block md:absolute mx-auto md:mt-0 md:w-[25vw] lg:w-[min(30vw,35rem)] md:top-11 lg:top-11 md:right-[10vw] lg:-right-3 xl:-right-10 z-40 pointer-events-none"
+          className="hidden md:block md:absolute mx-auto md:mt-0 md:w-[25vw] lg:w-[min(28vw,28rem)] md:top-11 lg:top-11 md:right-[10vw] lg:-right-3 xl:-right-9 z-40 pointer-events-none"
           src="/images/nibi-gems@2x.png"
           alt="Nibiru's earth"
           width={511}

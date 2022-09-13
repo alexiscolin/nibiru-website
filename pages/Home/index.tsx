@@ -20,13 +20,6 @@ const Home: NextPage = () => {
       <main>
         <Hero />
         <Hub />
-        {/* <Image
-          className="absolute right-5 -bottom-[10vh] z-40 w-[30vw]"
-          src="/images/gems.png"
-          alt="Nibiru's gems"
-          width={565}
-          height={779}
-        /> */}
       </main>
       <Footer />
     </div>
