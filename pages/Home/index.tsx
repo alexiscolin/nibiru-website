@@ -28,7 +28,7 @@ const Home: NextPage = () => {
         <meta property="og:image" content="Nibiru" />
         <meta
           name="twitter:image"
-          content="https://nibiru-website.netlify.app/og-image.jpg"
+          content="https://nibiru-website.netlify.app/og-img.jpg"
         />
         <meta property="og:url" content="https://nibiru.fi" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
         <meta name="twitter:title" content="Nibiru" />
         <meta
           name="twitter:image"
-          content="https://nibiru-website.netlify.app/og-image.jpg"
+          content="https://nibiru-website.netlify.app/og-img.jpg"
         />
         <meta name="twitter:image:alt" content="NibiruChain" />
       </Head>
