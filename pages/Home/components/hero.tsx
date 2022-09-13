@@ -29,7 +29,7 @@ const keyNumbers: KeyNumbers[] = [
 
 export default function Hero() {
   return (
-    <section className="flex items-center flex-col mb-10">
+    <section className="flex items-center flex-col mb-11">
       <LayoutCover fullScreen={false}>
         <NibiruWording className={styles.word + ' absolute w-full'} />
         <LayoutWrapper>

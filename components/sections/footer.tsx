@@ -72,7 +72,7 @@ export default function Footer() {
             </div>
             {footerLinks.map((link) => (
               <Link href={link.url} key={link.id}>
-                <a className="mr-6 font-medium">{link.name}</a>
+                <a className="navLink mr-6 font-medium">{link.name}</a>
               </Link>
             ))}
           </div>
@@ -92,7 +92,7 @@ export default function Footer() {
           </nav>
         </div>
         <span className="col-span-12 text-100 text-gray-700">
-          © 2022 Nibiru Overlords – {new Date().getFullYear()}
+          © {new Date().getFullYear()} Nibiru Overlords
         </span>
       </footer>
     </LayoutWrapper>

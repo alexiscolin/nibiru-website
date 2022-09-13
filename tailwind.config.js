@@ -38,6 +38,7 @@ module.exports = {
       auto: 'auto',
       full: '100%',
       0: '0',
+      px: `${pxToRem(1)}rem`,
       1: `${pxToRem(4)}rem`,
       2: `${pxToRem(6)}rem`,
       3: `${pxToRem(8)}rem`,
