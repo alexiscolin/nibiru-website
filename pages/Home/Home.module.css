@@ -3,3 +3,23 @@
   background-repeat: no-repeat;
   background-position: bottom right;
 }
+
+.titleStroke {
+  -webkit-text-stroke: 1px #ffffff;
+  -webkit-text-fill-color: transparent;
+}
+
+.word {
+  filter: contrast(170%) brightness(1000%);
+  background: -webkit-linear-gradient(
+      -90deg,
+      rgba(0, 0, 0, 1) 10%,
+      rgba(255, 255, 255, 0) 120%
+    ),
+    url('/images/noise.svg');
+  isolation: isolate;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  mix-blend-mode: multiply;
+}

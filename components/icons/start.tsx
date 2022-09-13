@@ -6,6 +6,7 @@ export default function IconStart({ className }: { className?: string }) {
       viewBox="0 0 19 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d="M8.56445 0.5874V7.59442C8.56445 7.93012 8.97095 8.18182 9.51308 8.18182C10.0552 8.18182 10.4617 7.93011 10.4617 7.59442V0.5874C10.4617 0.251697 10.0552 0 9.51308 0C8.97095 0 8.56445 0.251704 8.56445 0.5874V0.5874Z"

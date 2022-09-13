@@ -6,6 +6,7 @@ export default function IconDocs({ className }: { className?: string }) {
       viewBox="0 0 21 13"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d="M1.04339 13.0001H20.3316C20.7136 13.0001 21 12.7452 21 12.4053C21 12.0654 20.7136 11.8105 20.3316 11.8105H1.04339C0.661399 11.8105 0.375 12.0654 0.375 12.4053C0.375 12.7452 0.661407 13.0001 1.04339 13.0001Z"

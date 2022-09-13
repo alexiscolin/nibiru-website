@@ -17,7 +17,8 @@ module.exports = {
     },
     borderRadius: {
       none: '0',
-      DEFAULT: `${pxToRem(50)}rem`,
+      DEFAULT: `${pxToRem(40)}rem`,
+      lg: `${pxToRem(50)}rem`,
       full: '9999px',
     },
     colors: {
@@ -57,6 +58,7 @@ module.exports = {
     },
     fontFamily: {
       urw: ['"Urw"', defaultTheme.fontFamily.sans],
+      phonk: ['"Phonk"', defaultTheme.fontFamily.sans],
     },
     fontSize: {
       0: '0',
