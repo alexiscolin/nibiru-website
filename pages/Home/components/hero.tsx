@@ -4,7 +4,6 @@ import LayoutCover from '@/components/layouts/cover'
 import LayoutWrapper from '@/components/layouts/wrapper'
 import KeyNumber from '@/components/ui/keyNumber'
 import NibiruWording from './nibiru'
-import HomeEphermis from './ephemeris'
 
 interface KeyNumbers {
   id: number
@@ -52,7 +51,7 @@ export default function Hero() {
         />
         <LayoutWrapper>
           <div className="grid grid-cols-12 gap-4">
-            <div className="relative col-start-1 col-span-12 md:col-span-8 lg:col-span-10 xl:col-span-9 md:mt-9 lg:mt-10 xl:mt-11 mb-7 md:mb-6">
+            <div className="relative col-start-1 col-span-12 md:col-span-8 lg:col-span-10 xl:col-span-9 md:mt-9 lg:mt-10 xl:mt-10 mb-7 md:mb-6">
               <h1 className="text-center md:text-left text-500 md:text-600 lg:text-700 xl:text-800 font-black leading-none">
                 <span className={'stroked text-transparent'}>
                   Unlock leverage
@@ -60,7 +59,6 @@ export default function Hero() {
                 &nbsp;at scale
                 <br className="hidden md:inline" /> for the Cosmos ecosystem
               </h1>
-              <HomeEphermis className="absolute h-auto top-1/2 md:-top-7 lg:-top-6 xl:-top-8.5 md:left-[14rem] left-1/2 lg:left-[max(40%,25rem)] xl:left-[50%] -translate-y-1/2 md:translate-y-0 -translate-x-1/2 md:translate-x-0 md:-rotate-[170deg] md:-scale-x-100 xl:rotate-0 xl:scale-x-100 w-[12rem] lg:w-[18rem] xl:w-[25rem]" />
             </div>
             <div className="col-start-0 flex flex-col sm:flex-row md:col-start-1 col-span-12 md:col-span-7 lg:col-span-7 xl:col-span-5 row-start-2 items-center sm:items-start justify-around sm:justify-center md:justify-start">
               {keyNumbers.map((data) => (

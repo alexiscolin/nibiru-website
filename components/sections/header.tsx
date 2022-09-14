@@ -13,12 +13,12 @@ export default function Header() {
           </a>
         </Link>
         <nav className="col-start-5 col-span-8 flex flex-col sm:flex-row items-end justify-end uppercase font-bold text-100 lg:text-200 leading-none">
-          <Link href="#">
+          <Link href="https://github.com/NibiruChain">
             <a className={'navLink mt-3 mb-6 sm:my-0 mr-0 sm:mr-6 lg:mr-8'}>
-              Technology
+              Code
             </a>
           </Link>
-          <Link href="#">
+          <Link href="https://docs.nibiru.fi/concepts/readme">
             <a className={'navLink'}>Documentation</a>
           </Link>
         </nav>
