@@ -25,7 +25,10 @@ const Home: NextPage = () => {
           property="og:description"
           content="Nibiru unlock leverage at scale for the Cosmos ecosystem"
         />
-        <meta property="og:image" content="Nibiru" />
+        <meta
+          property="og:image"
+          content="https://nibiru-website.netlify.app/og-img.jpg"
+        />
         <meta
           name="twitter:image"
           content="https://nibiru-website.netlify.app/og-img.jpg"

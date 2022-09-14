@@ -43,7 +43,7 @@ const data = [
 export default function Hero() {
   return (
     <LayoutWrapper className="grid grid-cols-12 gap-4 ">
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 col-span-12 md:col-span-12 lg:col-span-8 xl:col-span-7 w-full justify-between pb-10 md:pb-12 md:px-0">
+      <section className="grid auto-rows-fr grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 col-span-12 md:col-span-12 lg:col-span-8 xl:col-span-7 w-full justify-between pb-10 md:pb-12 md:px-0">
         {data?.map((card) =>
           card.disabled ? (
             <Card
