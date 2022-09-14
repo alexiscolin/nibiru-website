@@ -29,7 +29,7 @@ const keyNumbers: KeyNumbers[] = [
 
 export default function Hero() {
   return (
-    <section className="flex items-center flex-col mb-8 md:mb-11">
+    <section className="flex items-center flex-col mb-8 md:mb-[min(10vh,theme(spacing.12))]">
       <LayoutWrapper>
         <Image
           className="relative md:hidden mx-auto w-11 mt-10.5  z-40"
