@@ -2,6 +2,7 @@
   html,
   body {
     font-size: 16px !important;
+    @apply overflow-x-hidden;
   }
 
   html {
@@ -16,6 +17,6 @@
   }
 
   body {
-    @apply text-gray-50 font-urw font-normal;
+    @apply bg-gray-800 text-gray-0 font-urw font-normal;
   }
 }

@@ -10,14 +10,15 @@ module.exports = {
   theme: {
     screens: {
       xs: `${pxToRem(320)}rem`,
-      sm: `${pxToRem(576)}rem`,
+      sm: `${pxToRem(520)}rem`,
       md: `${pxToRem(768)}rem`,
       lg: `${pxToRem(1024)}rem`,
       xl: `${pxToRem(1380)}rem`,
     },
     borderRadius: {
       none: '0',
-      DEFAULT: `${pxToRem(50)}rem`,
+      DEFAULT: `${pxToRem(40)}rem`,
+      lg: `${pxToRem(50)}rem`,
       full: '9999px',
     },
     colors: {
@@ -27,7 +28,8 @@ module.exports = {
         0: '#FFFFFF',
         50: '#E2E2E2',
         600: '#606060',
-        800: '#222222',
+        700: '#898989',
+        800: '#181818',
         900: '#171717',
         1000: '#000000',
       },
@@ -36,6 +38,7 @@ module.exports = {
       auto: 'auto',
       full: '100%',
       0: '0',
+      px: `${pxToRem(1)}rem`,
       1: `${pxToRem(4)}rem`,
       2: `${pxToRem(6)}rem`,
       3: `${pxToRem(8)}rem`,
@@ -53,9 +56,11 @@ module.exports = {
       10.5: `${pxToRem(104)}rem`,
       11: `${pxToRem(128)}rem`,
       12: `${pxToRem(192)}rem`,
+      '1/2': '50%',
     },
     fontFamily: {
       urw: ['"Urw"', defaultTheme.fontFamily.sans],
+      phonk: ['"Phonk"', defaultTheme.fontFamily.sans],
     },
     fontSize: {
       0: '0',

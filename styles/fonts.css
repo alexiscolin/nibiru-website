@@ -47,3 +47,13 @@
   src: url('/fonts/urw/URWGeometricExt-Black.woff2') format('woff2'),
     url('/fonts/urw/URWGeometricExt-Black.woff') format('woff');
 }
+
+/* Phonk */
+@font-face {
+  font-family: 'Phonk';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/phonk/phonk_regular.woff2') format('woff2'),
+    url('/fonts/phonk/phonk_regular.woff') format('woff');
+}

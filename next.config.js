@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false, //https://reactjs.org/docs/strict-mode.html#ensuring-reusable-state
   swcMinify: true,
   images: {
     formats: ['image/avif', 'image/webp'],

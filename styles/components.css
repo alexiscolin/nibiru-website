@@ -1,0 +1,20 @@
+@layer components {
+  .stroked {
+    -webkit-text-stroke: 1px #ffffff;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .navLink {
+    @apply relative;
+    &:after {
+      content: '';
+      @apply absolute block w-full h-px -bottom-px left-0 bg-gray-0 scale-x-0 origin-right transition-transform ease-in-out duration-150;
+    }
+
+    &:hover {
+      &:after {
+        @apply origin-left scale-x-100;
+      }
+    }
+  }
+}
