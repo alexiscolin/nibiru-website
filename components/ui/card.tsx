@@ -26,7 +26,7 @@ export default function Wrapper({
       }
     >
       <div className="flex justify-between uppercase text-100 font-medium">
-        <Icon className="mb-7.5" name={ico} />
+        <Icon className="mb-7.5 h-6" name={ico} />
         {detail && <span>{detail}</span>}
       </div>
       <span className="text-300 md:text-300 font-black leading-tight">
