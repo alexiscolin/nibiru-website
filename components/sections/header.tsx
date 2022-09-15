@@ -19,7 +19,7 @@ export default function Header() {
             </a>
           </Link>
           <Link href="https://docs.nibiru.fi/concepts/readme">
-            <a className={'navLink'}>Documentation</a>
+            <a className={'navLink'}>Docs</a>
           </Link>
         </nav>
         {/* <div className="col-start-9 col-span-5 flex justify-end">

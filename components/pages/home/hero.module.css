@@ -1,9 +1,3 @@
-.homepage {
-  background-image: url('/images/background-bot.jpg');
-  background-repeat: no-repeat;
-  background-position: bottom right;
-}
-
 .word {
   filter: contrast(170%) brightness(1000%);
   background: -webkit-linear-gradient(

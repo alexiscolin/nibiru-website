@@ -1,5 +1,5 @@
 import Image from 'next/future/image'
-import styles from '../Home.module.css'
+import styles from './hero.module.css'
 import LayoutCover from '@/components/layouts/cover'
 import LayoutWrapper from '@/components/layouts/wrapper'
 import KeyNumber from '@/components/ui/keyNumber'
