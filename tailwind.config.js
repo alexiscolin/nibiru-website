@@ -17,8 +17,8 @@ module.exports = {
     },
     borderRadius: {
       none: '0',
-      DEFAULT: `${pxToRem(40)}rem`,
-      lg: `${pxToRem(50)}rem`,
+      DEFAULT: `${pxToRem(30)}rem`,
+      lg: `${pxToRem(40)}rem`,
       full: '9999px',
     },
     colors: {
