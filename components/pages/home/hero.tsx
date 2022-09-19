@@ -1,5 +1,4 @@
-import Image from 'next/future/image'
-import styles from '../Home.module.css'
+import styles from './hero.module.css'
 import LayoutCover from '@/components/layouts/cover'
 import LayoutWrapper from '@/components/layouts/wrapper'
 import KeyNumber from '@/components/ui/keyNumber'
@@ -15,7 +14,7 @@ const keyNumbers: KeyNumbers[] = [
   {
     id: 0,
     title: '+40 blockchains',
-    content: 'Widely open for users',
+    content: 'Interoperability',
     ico: 'world',
   },
   {
@@ -30,20 +29,45 @@ export default function Hero() {
   return (
     <section className="flex items-center flex-col mb-8 md:mb-[min(10vh,theme(spacing.12))]">
       <LayoutWrapper>
-        <Image
-          className="relative md:hidden mx-auto w-11 mt-10.5  z-40"
-          src="/images/nibi-earth@2x.png"
-          alt="Nibiru's earth"
-          width={359}
-          height={658}
-        />
-        <Image
-          className="hidden md:block md:absolute mx-auto md:mt-0 md:w-[25vw] lg:w-[min(28vw,28rem)] md:top-11 lg:top-11 md:right-[10vw] lg:-right-3 xl:-right-9 z-40 pointer-events-none"
-          src="/images/nibi-gems@2x.png"
-          alt="Nibiru's earth"
-          width={511}
-          height={939}
-        />
+        <picture>
+          <source
+            srcSet="/images/nibi-earth.avif 1x, /images/nibi-earth@2x.avif 2x"
+            type="image/avif"
+          />
+          <source
+            srcSet="/images/nibi-earth.webp 1x, /images/nibi-earth@2x.webp 2x"
+            type="image/webp"
+          />
+          <img
+            src="/images/nibi-earth.png"
+            srcSet="/images/nibi-earth.png 1x, /images/nibi-earth@2x.png 2x"
+            alt="Nibiru's earth"
+            loading="lazy"
+            className="relative md:hidden mx-auto w-11 mt-10.5 z-40"
+            width={359}
+            height={658}
+          />
+        </picture>
+
+        <picture>
+          <source
+            srcSet="/images/nibi-gems.avif 1x, /images/nibi-gems@2x.avif 2x"
+            type="image/avif"
+          />
+          <source
+            srcSet="/images/nibi-gems.webp 1x, /images/nibi-gems@2x.webp 2x"
+            type="image/webp"
+          />
+          <img
+            src="/images/nibi-gems.png"
+            srcSet="/images/nibi-gems.png 1x, /images/nibi-gems@2x.png 2x"
+            alt="Nibiru's earth"
+            loading="lazy"
+            className="hidden md:block md:absolute mx-auto md:mt-0 md:w-[25vw] lg:w-[min(28vw,28rem)] md:top-11 lg:top-11 md:right-[10vw] lg:-right-3 xl:-right-9 z-40 pointer-events-none"
+            width={511}
+            height={939}
+          />
+        </picture>
       </LayoutWrapper>
       <LayoutCover fullScreen={false}>
         <NibiruWording

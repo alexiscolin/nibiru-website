@@ -50,7 +50,7 @@ const socialLinks: SocialLinks[] = [
   {
     id: 3,
     name: 'Medium',
-    url: 'https://nibiruchain.medium.com/',
+    url: 'https://blog.nibiru.fi/',
     ico: 'medium',
   },
   {
@@ -84,6 +84,7 @@ export default function Footer() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={link.name}
                   className="mr-5 md:mr-6 last:mr-0 hover:text-gray-0 transition-all ease-in-out duration-150"
                   title={link.name}
                 >
