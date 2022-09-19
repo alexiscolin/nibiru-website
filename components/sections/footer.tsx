@@ -19,7 +19,7 @@ const footerLinks: FooterLinks[] = [
   {
     id: 0,
     name: 'Terms',
-    url: 'https://docs.nibiru.fi/concepts/readme',
+    url: 'Terms and Conditions.pdf',
   },
   {
     id: 1,
