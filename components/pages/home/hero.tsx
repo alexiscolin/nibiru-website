@@ -14,7 +14,7 @@ const keyNumbers: KeyNumbers[] = [
   {
     id: 0,
     title: '+40 blockchains',
-    content: 'Widely open for users',
+    content: 'Interoperability',
     ico: 'world',
   },
   {
