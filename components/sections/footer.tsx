@@ -19,7 +19,7 @@ const footerLinks: FooterLinks[] = [
   {
     id: 0,
     name: 'Terms',
-    url: 'Terms and Conditions.pdf',
+    url: 'terms-and-conditions.pdf',
   },
   {
     id: 1,
