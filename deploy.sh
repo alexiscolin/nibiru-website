@@ -6,6 +6,7 @@ BUILD_PATH="out"
 REPO_URL="https://github.com/NibiruChain/nibiru-website"
 
 echo nibi.money > $BUILD_PATH/CNAME
+touch $BUILD_PATH/.nojekyll
 
 cd $BUILD_PATH 
 git init 
