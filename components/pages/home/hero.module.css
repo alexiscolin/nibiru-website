@@ -2,8 +2,8 @@
   filter: contrast(170%) brightness(1000%);
   background: -webkit-linear-gradient(
       -90deg,
-      rgba(0, 0, 0, 1) 10%,
-      rgba(255, 255, 255, 0) 120%
+      rgba(0, 0, 0, 1) 45%,
+      rgba(255, 255, 255, 0) 100%
     ),
     url('/images/noise.svg');
   isolation: isolate;
