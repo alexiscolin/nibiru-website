@@ -5,7 +5,6 @@ import Head from 'next/head'
 import Header from '@/components/sections/header'
 import Footer from '@/components/sections/footer'
 import Hero from '@/components/pages/home/hero'
-import Hub from '@/components/pages/home/hub'
 
 const Home: NextPage = () => {
   return (
@@ -47,7 +46,6 @@ const Home: NextPage = () => {
       <Header />
       <main>
         <Hero />
-        <Hub />
       </main>
       <Footer />
     </div>

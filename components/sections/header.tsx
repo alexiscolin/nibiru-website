@@ -1,11 +1,23 @@
+import { useRef, useEffect } from 'react'
+import { gsap } from 'gsap'
+
 import Link from 'next/link'
 import LayoutWrapper from '@/components/layouts/wrapper'
 import IconsNibiru from '@/components/ui/icons/nibiru'
 // import IconNotification from '@/components/ui/icons/notification'
 
 export default function Header() {
+  const header = useRef(null)
+
+  useEffect(() => {
+    gsap.from(header.current, { autoAlpha: 0, delay: 2.5 })
+  })
+
   return (
-    <header className="fixed top-0 left-0 py-6 md:py-8 w-full z-50">
+    <header
+      className="fixed top-0 left-0 py-6 md:py-8 w-full z-50"
+      ref={header}
+    >
       <LayoutWrapper className="grid grid-cols-12 gap-4 align-middle items-start sm:items-center justify-between w-full">
         <Link href="/" className="col-start-1 col-span-1">
           <a>

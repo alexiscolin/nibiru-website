@@ -51,13 +51,13 @@ export default function Hero() {
               ico={card.ico}
               detail={card.detail}
               disabled={card.disabled}
-              className="w-full cols-span-1 sm:cols-span-2 md:cols-span-1 h-full"
+              className="w-full cols-span-1 sm:cols-span-2 md:cols-span-1 h-full js-hub_card opacity-0"
             >
               {card.title}
             </Card>
           ) : (
             <Link key={card.id} href={card.href}>
-              <a className="w-full cols-span-1 sm:cols-span-2 md:cols-span-1 h-full">
+              <a className="w-full cols-span-1 sm:cols-span-2 md:cols-span-1 h-full js-hub_card opacity-0">
                 <Card
                   ico={card.ico}
                   disabled={card.disabled}
