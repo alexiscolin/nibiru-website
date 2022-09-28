@@ -33,66 +33,73 @@ export default function Hero() {
   const nibiWord = useRef(null)
   const hero = useRef(null)
   const tl = useRef<GSAPTimeline | null>(null)
+  const mm = gsap.matchMedia()
   const qw = gsap.utils.selector(nibiWord)
   const qt = gsap.utils.selector(hero)
 
   useEffect(() => {
-    tl.current = gsap
-      .timeline()
-      .to(qw('#js-word > .js-word_letter'), {
-        y: 0,
-        stagger: 0.1,
-        ease: 'expo.out',
-        duration: 1,
-      })
-      .set(qw('#js-word-gradient'), {
-        autoAlpha: 1,
-      })
-      .to(
-        qw('#js-word'),
-        {
-          autoAlpha: 0,
+    mm.add('(min-width: 800px)', () => {
+      tl.current = gsap
+        .timeline()
+        .from(qw('#js-word > .js-word_letter'), {
+          yPercent: 100,
+          stagger: 0.1,
           ease: 'expo.out',
-          duration: 2,
-        },
-        '<'
-      )
-      .to(
-        qt('.js-title'),
-        {
-          autoAlpha: 1,
-          y: 0,
-          stagger: 0.15,
-          duration: 0.8,
-          ease: 'power2.out',
-        },
-        '<'
-      )
-      .to(
-        qt('.js-hero_keynumber'),
-        {
-          y: 0,
-          autoAlpha: 1,
           duration: 1,
-          ease: 'power2.out',
-        },
-        '<=+.4'
-      )
-      .to(
-        qt('.js-hub_card'),
-        {
+        })
+        .set(qw('#js-word-gradient'), {
           autoAlpha: 1,
-          duration: 2,
-          ease: 'power2.out',
-        },
-        '<=+.2'
-      )
-      .to(
-        qt('.js-hero_ruby'),
-        { autoAlpha: 1, duration: 0.8, ease: 'power2.out' },
-        '2.1'
-      )
-      .to(qt('.js-hero_ruby'), { y: 0, duration: 2, ease: 'power2.out' }, '<')
+        })
+        .to(
+          qw('#js-word'),
+          {
+            autoAlpha: 0,
+            ease: 'expo.out',
+            duration: 2,
+          },
+          '<=-.2'
+        )
+        .from(
+          qt('.js-title'),
+          {
+            autoAlpha: 0,
+            yPercent: 100,
+            stagger: 0.15,
+            duration: 0.8,
+            ease: 'power2.out',
+          },
+          '<'
+        )
+        .from(
+          qt('.js-hero_keynumber'),
+          {
+            autoAlpha: 0,
+            yPercent: 100,
+            duration: 0.8,
+            ease: 'power2.out',
+          },
+          '<=+.4'
+        )
+        .from(
+          qt('.js-hub_card'),
+          {
+            autoAlpha: 0,
+            duration: 2,
+            ease: 'power2.out',
+          },
+          '<=+.4'
+        )
+        .to(
+          qt('.js-hero_ruby'),
+          { autoAlpha: 1, duration: 0.8, ease: 'power2.out' },
+          '<'
+        )
+        .to(
+          qt('.js-hero_ruby'),
+          { y: 0, duration: 2, ease: 'power2.out' },
+          '<=-.4'
+        )
+    })
 
     return () => {
       tl.current?.kill()
@@ -149,18 +156,18 @@ export default function Hero() {
             <div className="grid grid-cols-12 gap-4">
               <div className="relative col-start-1 col-span-12 md:col-span-8 lg:col-span-10 xl:col-span-9 md:mt-9 lg:mt-10 xl:mt-10 mb-7 md:mb-6">
                 <h1 className="text-center md:text-left text-500 md:text-600 lg:text-700 xl:text-800 font-black leading-none">
-                  <span className="js-title opacity-0 translate-y-full | inline-block">
+                  <span className="js-title | inline-block">
                     <span className={'stroked text-transparent'}>
                       Unlock leverage
                     </span>
                     &nbsp;at scale
                   </span>
-                  <span className="js-title opacity-0 translate-y-full | md:inline-block inline">
+                  <span className="js-title | md:inline-block inline">
                     for the Cosmos ecosystem
                   </span>
                 </h1>
               </div>
-              <div className="col-start-0 flex flex-col sm:flex-row md:col-start-1 col-span-12 md:col-span-7 lg:col-span-7 xl:col-span-5 row-start-2 items-center sm:items-start justify-around sm:justify-center md:justify-start  | js-hero_keynumber opacity-0 translate-y-full">
+              <div className="col-start-0 flex flex-col sm:flex-row md:col-start-1 col-span-12 md:col-span-7 lg:col-span-7 xl:col-span-5 row-start-2 items-center sm:items-start justify-around sm:justify-center md:justify-start  | js-hero_keynumber">
                 {keyNumbers.map((data) => (
                   <KeyNumber
                     key={data.id}

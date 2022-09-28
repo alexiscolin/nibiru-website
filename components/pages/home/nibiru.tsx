@@ -25,12 +25,12 @@ const NibiruWording = forwardRef<HTMLDivElement, Props>((props, ref) => (
       className={'hidden sm:block absolute w-full overflow-hidden'}
       id="js-word"
     >
-      <span className="inline-block js-word_letter translate-y-full ">N</span>
-      <span className="inline-block js-word_letter translate-y-full ">I</span>
-      <span className="inline-block js-word_letter translate-y-full ">B</span>
-      <span className="inline-block js-word_letter translate-y-full ">I</span>
-      <span className="inline-block js-word_letter translate-y-full ">R</span>
-      <span className="inline-block js-word_letter translate-y-full ">U</span>
+      <span className="inline-block js-word_letter ">N</span>
+      <span className="inline-block js-word_letter ">I</span>
+      <span className="inline-block js-word_letter ">B</span>
+      <span className="inline-block js-word_letter ">I</span>
+      <span className="inline-block js-word_letter ">R</span>
+      <span className="inline-block js-word_letter ">U</span>
     </div>
   </div>
 ))
