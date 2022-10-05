@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   reactStrictMode: false, //https://reactjs.org/docs/strict-mode.html#ensuring-reusable-state
   assetPrefix: './',

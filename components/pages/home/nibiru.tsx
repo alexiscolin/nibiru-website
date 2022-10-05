@@ -35,5 +35,5 @@ const NibiruWording = forwardRef<HTMLDivElement, Props>((props, ref) => (
   </div>
 ))
 
-NibiruWording.displayName = 'Search'
+NibiruWording.displayName = 'NibiruWording'
 export default NibiruWording

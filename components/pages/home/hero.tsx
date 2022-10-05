@@ -1,5 +1,6 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, Suspense, useState, useCallback } from 'react'
 import { gsap } from 'gsap'
+import { Canvas } from '@react-three/fiber'
 
 import styles from './hero.module.css'
 import LayoutCover from '@/components/layouts/cover'
@@ -7,6 +8,7 @@ import LayoutWrapper from '@/components/layouts/wrapper'
 import KeyNumber from '@/components/ui/keyNumber'
 import NibiruWording from './nibiru'
 import Hub from '@/components/pages/home/hub'
+import Rubies from '@/components/pages/home/rubies'
 
 interface KeyNumbers {
   id: number
@@ -14,6 +16,7 @@ interface KeyNumbers {
   content: string
   ico: string
 }
+
 const keyNumbers: KeyNumbers[] = [
   {
     id: 0,
@@ -30,14 +33,15 @@ const keyNumbers: KeyNumbers[] = [
 ]
 
 export default function Hero() {
-  const nibiWord = useRef(null)
-  const hero = useRef(null)
-  const tl = useRef<GSAPTimeline | null>(null)
-  const mm = gsap.matchMedia()
-  const qw = gsap.utils.selector(nibiWord)
-  const qt = gsap.utils.selector(hero)
+  const nibiWord = useRef<HTMLDivElement>(null)
+  const hero = useRef<HTMLDivElement>(null)
+  const [tl] = useState<GSAPTimeline>(() => gsap.timeline())
 
   useEffect(() => {
+    const mm = gsap.matchMedia()
+    const qw = gsap.utils.selector(nibiWord)
+    const qt = gsap.utils.selector(hero)
+
     mm.add('(min-width: 800px)', () => {
       tl.current = gsap
         .timeline()
@@ -89,67 +93,31 @@ export default function Hero() {
           },
           '<=+.4'
         )
-        .to(
-          qt('.js-hero_ruby'),
-          { autoAlpha: 1, duration: 0.8, ease: 'power2.out' },
-          '<'
-        )
-        .to(
-          qt('.js-hero_ruby'),
-          { y: 0, duration: 2, ease: 'power2.out' },
-          '<=-.4'
-        )
+        .from('.js-gems', { autoAlpha: 0, duration: 1.5 }, 2)
     })
 
     return () => {
       tl.current?.kill()
     }
-  }, [qw, qt])
+  }, [tl])
+
+  const addAnimation = useCallback(
+    (animation: GSAPTimeline | GSAPTween) => {
+      tl.add(animation, 1.5)
+    },
+    [tl]
+  )
 
   return (
     <div ref={hero}>
       <section className="flex items-center flex-col mb-8 md:mb-[min(10vh,theme(spacing.12))]">
-        <LayoutWrapper>
-          <picture>
-            <source
-              srcSet="/images/nibi-earth.avif 1x, /images/nibi-earth@2x.avif 2x"
-              type="image/avif"
-            />
-            <source
-              srcSet="/images/nibi-earth.webp 1x, /images/nibi-earth@2x.webp 2x"
-              type="image/webp"
-            />
-            <img
-              src="/images/nibi-earth.png"
-              srcSet="/images/nibi-earth.png 1x, /images/nibi-earth@2x.png 2x"
-              alt="Nibiru's earth"
-              loading="lazy"
-              className="relative md:hidden mx-auto w-11 mt-10.5 z-40"
-              width={359}
-              height={658}
-            />
-          </picture>
-
-          <picture>
-            <source
-              srcSet="/images/nibi-gems.avif 1x, /images/nibi-gems@2x.avif 2x"
-              type="image/avif"
-            />
-            <source
-              srcSet="/images/nibi-gems.webp 1x, /images/nibi-gems@2x.webp 2x"
-              type="image/webp"
-            />
-            <img
-              src="/images/nibi-gems.png"
-              srcSet="/images/nibi-gems.png 1x, /images/nibi-gems@2x.png 2x"
-              alt="Nibiru's earth"
-              loading="lazy"
-              className="hidden md:block md:absolute mx-auto md:mt-0 md:w-[25vw] lg:w-[min(28vw,28rem)] md:top-11 lg:top-11 md:right-[10vw] lg:-right-3 xl:-right-9 z-40 pointer-events-none | js-hero_ruby opacity-0 translate-y-[10%]"
-              width={511}
-              height={939}
-            />
-          </picture>
-        </LayoutWrapper>
+        <div className="absolute top-0 right-5 w-1/3 h-full z-20">
+          <Canvas camera={{ fov: 75 }} className="js-gems">
+            <Suspense fallback={null}>
+              <Rubies position={[0, -1, -5]} addAnimation={addAnimation} />
+            </Suspense>
+          </Canvas>
+        </div>
         <LayoutCover fullScreen={false}>
           <NibiruWording ref={nibiWord} className={styles.word} />
           <LayoutWrapper>
