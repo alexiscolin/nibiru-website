@@ -8,7 +8,7 @@ const useMousePosition = () => {
     cursorY: 0,
   })
 
-  const updatePosition = (e: any) => {
+  const updatePosition = (e: MouseEvent) => {
     const { clientX, clientY } = e
 
     setPosition({

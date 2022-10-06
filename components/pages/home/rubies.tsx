@@ -34,62 +34,83 @@ export default function Rubies(props: Props) {
   const tl = useRef<GSAPTimeline | null>(null)
 
   useEffect(() => {
+    const mm = gsap.matchMedia()
     tl.current = gsap.timeline()
+    const breakPoint = 800
 
-    tl.current.to(nibi?.current?.position || null, {
-      y: 2.89,
-      ease: 'power2.out',
-      duration: 1.4,
-    })
-    tl.current.to(
-      nibi?.current?.rotation || null,
+    mm.add(
       {
-        y: -0.65,
-        ease: 'power2.out',
-        duration: 1.4,
+        isDesktop: `(min-width: ${breakPoint}px)`,
+        isMobile: `(max-width: ${breakPoint - 1}px)`,
       },
-      '<'
+      (context) => {
+        const isDesktop = context?.conditions?.isDesktop
+
+        if (tl.current !== null) {
+          tl.current.to(
+            nibi?.current?.position || null,
+            {
+              y: 2.89,
+              ease: 'power2.out',
+              duration: 1.4,
+            },
+            isDesktop ? 1.8 : 0
+          )
+          tl.current.to(
+            nibi?.current?.rotation || null,
+            {
+              y: -0.65,
+              ease: 'power2.out',
+              duration: 1.4,
+            },
+            '<'
+          )
+          tl.current.to(
+            cosmos?.current?.position || null,
+            {
+              y: 0.27,
+              ease: 'power2.out',
+              duration: 1.4,
+            },
+            isDesktop ? 1.95 : 0.15
+          )
+          tl.current.to(
+            cosmos?.current?.rotation || null,
+            {
+              y: -0.29,
+              ease: 'power2.out',
+              duration: 1.4,
+            },
+            '<'
+          )
+          tl.current.to(
+            axelar?.current?.position || null,
+            {
+              y: -2.08,
+              ease: 'power2.out',
+              duration: 1.4,
+            },
+            isDesktop ? 2.23 : 0.28
+          )
+          tl.current.to(
+            axelar?.current?.rotation || null,
+            {
+              y: -0.27,
+              ease: 'power2.out',
+              duration: 1.4,
+            },
+            '<'
+          )
+        }
+      }
     )
-    tl.current.to(
-      cosmos?.current?.position || null,
-      {
-        y: 0.27,
-        ease: 'power2.out',
-        duration: 1.4,
-      },
-      0.15
-    )
-    tl.current.to(
-      cosmos?.current?.rotation || null,
-      {
-        y: -0.29,
-        ease: 'power2.out',
-        duration: 1.4,
-      },
-      '<'
-    )
-    tl.current.to(
-      axelar?.current?.position || null,
-      {
-        y: -2.08,
-        ease: 'power2.out',
-        duration: 1.4,
-      },
-      0.28
-    )
-    tl.current.to(
-      axelar?.current?.rotation || null,
-      {
-        y: -0.27,
-        ease: 'power2.out',
-        duration: 1.4,
-      },
-      '<'
-    )
-    props.addAnimation(tl.current)
+
+    if (tl.current !== null) {
+      props.addAnimation(tl.current)
+    }
 
     return () => {
-      tl.current?.progress(0).kill()
+      tl.current?.kill()
     }
   }, [props, tl])
 
@@ -97,7 +118,7 @@ export default function Rubies(props: Props) {
   useFrame(() => {
     if (gems.current !== null) {
       gems.current.rotation.y += (cursorX - gems.current.rotation.y) * 0.05
-      gems.current.rotation.x += (cursorY - gems.current.rotation.x) * 0.05
+      gems.current.rotation.x += (cursorY / 2 - gems.current.rotation.x) * 0.05
     }
   })
 

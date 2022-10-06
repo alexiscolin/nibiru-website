@@ -10,7 +10,11 @@ export default function Header() {
   const header = useRef(null)
 
   useEffect(() => {
-    gsap.from(header.current, { autoAlpha: 0, delay: 2.5 })
+    const mm = gsap.matchMedia()
+
+    mm.add('(min-width: 800px)', () => {
+      gsap.from(header.current, { autoAlpha: 0, delay: 2.5 })
+    })
   })
 
   return (

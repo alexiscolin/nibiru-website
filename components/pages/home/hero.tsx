@@ -10,6 +10,7 @@ import KeyNumber from '@/components/ui/keyNumber'
 import NibiruWording from './nibiru'
 import Hub from '@/components/pages/home/hub'
 import Rubies from '@/components/pages/home/rubies'
+import useResize from '@/components/useResize'
 
 interface KeyNumbers {
   id: number
@@ -42,16 +43,15 @@ export default function Hero() {
     const mm = gsap.matchMedia()
     const qw = gsap.utils.selector(nibiWord)
     const qt = gsap.utils.selector(hero)
+    const breakPoint = 800
 
-    mm.add('(min-width: 800px)', () => {
-      tl.current = gsap
-        .timeline()
-        .from(qw('#js-word > .js-word_letter'), {
-          yPercent: 100,
-          stagger: 0.1,
-          ease: 'expo.out',
-          duration: 1,
-        })
+    mm.add(`(min-width: ${breakPoint}px)`, () => {
+      tl.from(qw('#js-word > .js-word_letter'), {
+        yPercent: 100,
+        stagger: 0.1,
+        ease: 'expo.out',
+        duration: 1,
+      })
         .set(qw('#js-word-gradient'), {
           autoAlpha: 1,
         })
@@ -97,26 +97,37 @@ export default function Hero() {
         .from('.js-gems', { autoAlpha: 0, duration: 1.5 }, 2)
     })
 
+    mm.add(`(max-width: ${breakPoint - 1}px)`, () => {
+      tl.from('.js-gems', { autoAlpha: 0, duration: 1.5 }, 0)
+    })
+
     return () => {
-      tl.current?.kill()
+      tl.kill()
     }
   }, [tl])
 
   const addAnimation = useCallback(
     (animation: GSAPTimeline | GSAPTween) => {
-      tl.add(animation, 1.5)
+      tl.add(animation, 0)
     },
     [tl]
   )
 
+  const windowWidth = useResize()
   return (
     <div ref={hero}>
       <section className="flex items-center flex-col mb-8 md:mb-[min(10vh,theme(spacing.12))]">
-        <div className="absolute top-0 left-0 w-full h-full z-10">
+        <div className="md:absolute top-0 left-0 w-full h-[60vh] md:h-full z-10">
           <Canvas camera={{ fov: 75 }} className="js-gems">
             <Suspense fallback={null}>
-              <OrthographicCamera makeDefault zoom={70} />
-              <Rubies position={[8, -1.5, -5]} addAnimation={addAnimation} />
+              <OrthographicCamera
+                makeDefault
+                zoom={windowWidth >= 800 ? 70 : 45}
+              />
+              <Rubies
+                position={[windowWidth >= 800 ? windowWidth / 250 : 0, -1, -5]}
+                addAnimation={addAnimation}
+              />
             </Suspense>
           </Canvas>
         </div>
