@@ -1,6 +1,7 @@
 import { useRef, useEffect, Suspense, useState, useCallback } from 'react'
 import { gsap } from 'gsap'
 import { Canvas } from '@react-three/fiber'
+import { OrthographicCamera } from '@react-three/drei'
 
 import styles from './hero.module.css'
 import LayoutCover from '@/components/layouts/cover'
@@ -111,10 +112,11 @@ export default function Hero() {
   return (
     <div ref={hero}>
       <section className="flex items-center flex-col mb-8 md:mb-[min(10vh,theme(spacing.12))]">
-        <div className="absolute top-0 right-5 w-1/3 h-full z-20">
+        <div className="absolute top-0 left-0 w-full h-full z-10">
           <Canvas camera={{ fov: 75 }} className="js-gems">
             <Suspense fallback={null}>
-              <Rubies position={[0, -1, -5]} addAnimation={addAnimation} />
+              <OrthographicCamera makeDefault zoom={70} />
+              <Rubies position={[8, -1.5, -5]} addAnimation={addAnimation} />
             </Suspense>
           </Canvas>
         </div>
