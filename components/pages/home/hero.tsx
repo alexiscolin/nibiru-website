@@ -100,6 +100,7 @@ export default function Hero() {
     })
 
     mm.add(`(max-width: ${breakPoint - 1}px)`, () => {
+      tl.to(mask.current, { autoAlpha: 0, duration: 0.5 })
       tl.from('.js-gems', { autoAlpha: 0, duration: 1.5 }, 0)
     })
 
