@@ -29,13 +29,24 @@ export default function Rubies(props: Props) {
 
   const gems = useRef<THREE.Group>(null)
   const nibi = useRef<THREE.Mesh>(null)
+  const nibiWrap = useRef<THREE.Group>(null)
   const axelar = useRef<THREE.Mesh>(null)
+  const axelarWrap = useRef<THREE.Group>(null)
   const cosmos = useRef<THREE.Mesh>(null)
+  const cosmosWrap = useRef<THREE.Group>(null)
+
   const tl = useRef<GSAPTimeline | null>(null)
+  const tlNibi = useRef<GSAPTimeline | null>(null)
+  const tlAxelar = useRef<GSAPTimeline | null>(null)
+  const tlCosmos = useRef<GSAPTimeline | null>(null)
 
   useEffect(() => {
     const mm = gsap.matchMedia()
     tl.current = gsap.timeline()
+    tlNibi.current = gsap.timeline({ repeat: -1 })
+    tlCosmos.current = gsap.timeline({ repeat: -1, delay: 0.4 })
+    tlAxelar.current = gsap.timeline({ repeat: -1, delay: 0.8 })
+
     const breakPoint = 800
 
     mm.add(
@@ -105,12 +116,45 @@ export default function Rubies(props: Props) {
       }
     )
 
+    if (
+      tlNibi.current !== null &&
+      tlCosmos.current !== null &&
+      tlAxelar.current !== null
+    ) {
+      const animation = [
+        {
+          y: -0.2,
+          ease: 'Sine.easeInOut',
+          duration: 2.5,
+        },
+        {
+          y: 0,
+          ease: 'Sine.easeInOut',
+          duration: 2.5,
+        },
+      ]
+      tlNibi.current
+        .to(nibiWrap?.current?.position || null, animation[0])
+        .to(nibiWrap?.current?.position || null, animation[1])
+
+      tlCosmos.current
+        .to(cosmosWrap?.current?.position || null, animation[0])
+        .to(cosmosWrap?.current?.position || null, animation[1])
+
+      tlAxelar.current
+        .to(axelarWrap?.current?.position || null, animation[0])
+        .to(axelarWrap?.current?.position || null, animation[1])
+    }
+
     if (tl.current !== null) {
       props.addAnimation(tl.current)
     }
 
     return () => {
       tl.current?.kill()
+      tlNibi.current?.kill()
+      tlCosmos.current?.kill()
+      tlAxelar.current?.kill()
     }
   }, [props, tl])
 
@@ -124,34 +168,40 @@ export default function Rubies(props: Props) {
 
   return (
     <group {...props} dispose={null} ref={gems}>
-      <mesh
-        ref={nibi}
-        geometry={nodes['nibi-gem'].geometry}
-        material={nodes['nibi-gem'].material}
-        position={[-0.04, -3, -1.91]}
-        rotation={[3.14, -4, 3.14]}
-        scale={[1.3, 1.3, 1.3]}
-      >
-        <meshBasicMaterial map={bakedTexture} map-flipY={false} />
-      </mesh>
-      <mesh
-        ref={axelar}
-        geometry={nodes['axelar-gem'].geometry}
-        material={nodes['axelar-gem'].material}
-        position={[-1.51, -9, 2.12]}
-        rotation={[-3.14, -4, 0]}
-      >
-        <meshBasicMaterial map={bakedTexture} map-flipY={false} />
-      </mesh>
-      <mesh
-        ref={cosmos}
-        geometry={nodes['cosmos-gem'].geometry}
-        material={nodes['cosmos-gem'].material}
-        position={[2.26, -7, 0.99]}
-        rotation={[-3.14, -4, 0]}
-      >
-        <meshBasicMaterial map={bakedTexture} map-flipY={false} />
-      </mesh>
+      <group ref={nibiWrap} dispose={null}>
+        <mesh
+          ref={nibi}
+          geometry={nodes['nibi-gem'].geometry}
+          material={nodes['nibi-gem'].material}
+          position={[-0.04, -3, -1.91]}
+          rotation={[3.14, -4, 3.14]}
+          scale={[1.3, 1.3, 1.3]}
+        >
+          <meshBasicMaterial map={bakedTexture} map-flipY={false} />
+        </mesh>
+      </group>
+      <group ref={axelarWrap} dispose={null}>
+        <mesh
+          ref={axelar}
+          geometry={nodes['axelar-gem'].geometry}
+          material={nodes['axelar-gem'].material}
+          position={[-1.51, -9, 2.12]}
+          rotation={[-3.14, -4, 0]}
+        >
+          <meshBasicMaterial map={bakedTexture} map-flipY={false} />
+        </mesh>
+      </group>
+      <group ref={cosmosWrap} dispose={null}>
+        <mesh
+          ref={cosmos}
+          geometry={nodes['cosmos-gem'].geometry}
+          material={nodes['cosmos-gem'].material}
+          position={[2.26, -7, 0.99]}
+          rotation={[-3.14, -4, 0]}
+        >
+          <meshBasicMaterial map={bakedTexture} map-flipY={false} />
+        </mesh>
+      </group>
     </group>
   )
 }
