@@ -1,7 +1,7 @@
 import { useRef, useEffect, Suspense, useState, useCallback } from 'react'
 import { gsap } from 'gsap'
 import { Canvas } from '@react-three/fiber'
-import { OrthographicCamera } from '@react-three/drei'
+import { OrthographicCamera, TorusKnot } from '@react-three/drei'
 
 import styles from './hero.module.css'
 import LayoutCover from '@/components/layouts/cover'
@@ -36,6 +36,7 @@ const keyNumbers: KeyNumbers[] = [
 
 export default function Hero() {
   const nibiWord = useRef<HTMLDivElement>(null)
+  const mask = useRef<HTMLDivElement>(null)
   const hero = useRef<HTMLDivElement>(null)
   const [tl] = useState<GSAPTimeline>(() => gsap.timeline())
 
@@ -46,12 +47,13 @@ export default function Hero() {
     const breakPoint = 800
 
     mm.add(`(min-width: ${breakPoint}px)`, () => {
-      tl.from(qw('#js-word > .js-word_letter'), {
-        yPercent: 100,
-        stagger: 0.1,
-        ease: 'expo.out',
-        duration: 1,
-      })
+      tl.to(mask.current, { autoAlpha: 0, duration: 0.5 })
+        .from(qw('#js-word > .js-word_letter'), {
+          yPercent: 100,
+          stagger: 0.1,
+          ease: 'expo.out',
+          duration: 1,
+        })
         .set(qw('#js-word-gradient'), {
           autoAlpha: 1,
         })
@@ -116,6 +118,10 @@ export default function Hero() {
   const windowWidth = useResize()
   return (
     <div ref={hero}>
+      <div
+        className="fixed w-full h-full bg-gray-1000 top-0 left-0 z-50"
+        ref={mask}
+      ></div>
       <section className="flex items-center flex-col mb-8 md:mb-[min(10vh,theme(spacing.12))]">
         <div className="md:absolute top-0 left-0 w-full h-[60vh] md:h-full z-10">
           <Canvas camera={{ fov: 75 }} className="js-gems">
