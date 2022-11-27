@@ -11,6 +11,7 @@ import NibiruWording from './nibiru'
 import Hub from '@/components/pages/home/hub'
 import Rubies from '@/components/pages/home/rubies'
 import useResize from '@/components/useResize'
+import HomeEphermis from '@/components/pages/home/ephemeris'
 
 interface KeyNumbers {
   id: number
@@ -96,6 +97,15 @@ export default function Hero() {
           },
           '<=+.4'
         )
+        .from(
+          qt('.js-hero_ephemeris'),
+          {
+            autoAlpha: 0,
+            duration: 2,
+            ease: 'power2.out',
+          },
+          '<=+.4'
+        )
         .from('.js-gems', { autoAlpha: 0, duration: 1.5 }, 2)
     })
 
@@ -154,6 +164,7 @@ export default function Hero() {
                     for the Cosmos ecosystem
                   </span>
                 </h1>
+                <HomeEphermis className="absolute h-auto top-1/2 md:-top-7 lg:-top-6 xl:-top-8.5 md:left-[14rem] left-1/2 lg:left-[max(40%,25rem)] xl:left-[50%] -translate-y-1/2 md:translate-y-0 -translate-x-1/2 md:translate-x-0 md:-rotate-[170deg] md:-scale-x-100 xl:rotate-0 xl:scale-x-100 w-[12rem] lg:w-[18rem] xl:w-[25rem] | js-hero_ephemeris" />
               </div>
               <div className="col-start-0 flex flex-col sm:flex-row md:col-start-1 col-span-12 md:col-span-7 lg:col-span-7 xl:col-span-5 row-start-2 items-center sm:items-start justify-around sm:justify-center md:justify-start  | js-hero_keynumber">
                 {keyNumbers.map((data) => (
