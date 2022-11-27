@@ -1,7 +1,7 @@
 import { useRef, useEffect, Suspense, useState, useCallback } from 'react'
 import { gsap } from 'gsap'
 import { Canvas } from '@react-three/fiber'
-import { OrthographicCamera, TorusKnot } from '@react-three/drei'
+import { OrthographicCamera } from '@react-three/drei'
 
 import styles from './hero.module.css'
 import LayoutCover from '@/components/layouts/cover'
